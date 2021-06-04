@@ -18,5 +18,5 @@ function searchByName(){
         console.log(filteredPeople);
     }else{
         console.log('Sorry, looks like there is no one with that name.');
-    }
+    }    
 }
