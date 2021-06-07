@@ -12,39 +12,32 @@
     <input type="text" id="fname" name="fname" value="Joy"><br><br>
     <label for="lname">Last name:</label><br>
     <input type="text" id="lname" name="lname" value="Madden"><br><br>
-    <input type="button" onclick="searchByName()" value="Submit">
-  </form>
-  <form id="genderForm">
-    <input type="radio" id="male" name="gender" value="male">
-    <label for="male">Male</label><br>
-    <input type="radio" id="female" name="gender" value="female">
-    <labe for="female">Female</labe><br>
-  </form>
-  <form id="dobForm">
+
+    <label for="male">Gender</label><br>
+    <input type="text" id="gender">
+
+
     <label for="dob">Date Of Birth:</label><br>
     <input type="text" id="dob" name="dob"><br><br>
-  </form>
-  <!-- height form-->
-  <form id="heightform">
+
+
     <label for="height">Height(in)</label><br>
     <input type="text" id="height" name="height"><br>
-  </form>
-  <form id="weight">
+
+    <label for="occupation">Occupation:</label><br>
+    <input type="text" id="occupationTypes" name="occupation"><br><br>
+
     <label for=Weight>Weight:</label><br>
     <input type="text" id="lbs" name="weight" value="lbs"><br><br>
-  </form>
+
   <!-- eye color form -->
-  <form id="eyeform">
+
     <label for="eyecolor">Eye Color:</label><br>
     <input type="text" id="icolor" name="eyecolor"><br><br>
 
-    <!-- <input type="button" onclick="searchByEyeColor()" value="Submit"> -->
+    <input type="button" onclick="search()" value="Submit">
   </form>
 
-  <form id="occupationForm">
-    <label for="occupation">Occupation:</label><br>
-    <input type="text" id="occupationTypes" name="occupation"><br><br>
-  </form>
 
   <form id="showAll">
     <input type="button" onclick="showPeople()" value="Show All">
@@ -52,11 +45,35 @@
   </form>
 
 
-  <script src="data.js"></script>
+ 
 
-  <script src="mostWanted.js"></script>
+  <div id="printStuff">
+      <h1>Hello World</h1>
+  </div>
+  <button onclick="doStuff()">click me!</button>
+  <table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Eye Color</th>
+            <th>Occupation</th>
+            <th>Parents</th>
+            <th>Current Spouse</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="persons">
 
-
+    </tbody>
+  </table> 
+<script src="data.js"></script>
 </body>
+<script src="data.js"></script>
 
+<script src="mostWanted.js"></script>
 </html>
