@@ -15,16 +15,34 @@ function search(){
 
 
     let results = people;
-    if(eyeColorInput != ""){
-        results = searchByEyeColor(eyeColorInput, results)
-    }
+
     if(genderInput != ""){
         results = searchByGender(genderInput, results)
     }
+    if(dobInput != ""){
+        results = searchByGender(dobInput, results)
+    }
+    if(heightInput != ""){
+        results = searchByGender(heightInput, results)
+    }
+    if(weightInput != ""){
+        results = searchByGender(weightInput, results)
+    }
+    if(eyeColorInput != ""){
+        results = searchByEyeColor(eyeColorInput, results)
+    }
+    if(occupationInput != ""){
+        results = searchByGender(occupationInput, results)
+    }
+    if(parentsInput != ""){
+        results = searchByGender(parentsInput, results)
+    }
+    if(spouseInput != ""){
+        results = searchByGender(spouseInput, results)
+    }
 
 
- 
-   
+
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
    
     
@@ -90,7 +108,6 @@ function buildTable(peopleToDisplay){
         <td>${el.occupation}</td>
         <td>${el.parents}</td>
         <td>${el.currentSpouse}</td>
-		<td><button onclick="deletePerson()">Delete</button></td>
 		</tr>`
 	})
 }
