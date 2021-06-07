@@ -48,13 +48,36 @@
 
   <form id="showAll">
     <input type="button" onclick="showPeople()" value="Show All">
-    
+
   </form>
 
 
   <script src="data.js"></script>
 
   <script src="mostWanted.js"></script>
+  <br>
+  <br>
+  <button onclick="buildTable()">Click for suspects</button>
+  <br>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Date Of Birth</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Eye Color</th>
+        <th>Occupation</th>
+      </tr>
+    </thead>
+    <tbody id="data">
+
+    </tbody>
+  </table>
 
 
 </body>
