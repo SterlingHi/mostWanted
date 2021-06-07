@@ -1,6 +1,10 @@
 'use strict';
 
+<<<<<<< HEAD
 function search(){
+=======
+function searchByName() {
+>>>>>>> 7c58ba254a0424023764f7fc7efffdc9f66bf01c
     // Grabbing the values from our nameForm form and inputs.
     let firstNameInput = document.forms['nameForm']['fname'].value;
     let lastNameInput = document.forms['nameForm']['lname'].value;
@@ -20,6 +24,7 @@ function search(){
  
    
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
+<<<<<<< HEAD
    
     
     // Rather than console logging, you need to append the filteredPeople to a table.
@@ -27,10 +32,24 @@ function search(){
         console.log(results);
         buildTable(results)
     }else{
+=======
+    let filteredPeople = people.filter(function (person) {
+        if (person.firstName === firstNameInput && person.lastName === lastNameInput) {
+            return true;
+        }
+        return false;
+    });
+
+    // Rather than console logging, you need to append the filteredPeople to a table.
+    if (filteredPeople.length > 0) {
+        console.log(filteredPeople);
+    } else {
+>>>>>>> 7c58ba254a0424023764f7fc7efffdc9f66bf01c
         console.log('Sorry, looks like there is no one with that name.');
-    }    
+    }
 }
 
+<<<<<<< HEAD
 function searchByName(firstName, lastName, peopleToSearch){
     let filteredPeople = peopleToSearch.filter(function (person) {
         if(person.firstName === firstNameInput && person.lastName === lastNameInput){
@@ -40,6 +59,9 @@ function searchByName(firstName, lastName, peopleToSearch){
     });
     return filteredPeople;
 }
+=======
+function showPeople() {
+>>>>>>> 7c58ba254a0424023764f7fc7efffdc9f66bf01c
 
 function searchByEyeColor(eyeColor, peopleToSearch){
     let filteredPeople = peopleToSearch.filter(function(el){
