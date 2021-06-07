@@ -1,15 +1,17 @@
 'use strict';
 
-<<<<<<< HEAD
 function search(){
-=======
-function searchByName() {
->>>>>>> 7c58ba254a0424023764f7fc7efffdc9f66bf01c
     // Grabbing the values from our nameForm form and inputs.
     let firstNameInput = document.forms['nameForm']['fname'].value;
     let lastNameInput = document.forms['nameForm']['lname'].value;
-    let eyeColorInput = document.forms['nameForm']['eyecolor'].value;
     let genderInput = document.forms['nameForm']['gender'].value;
+    let dobInput = document.forms['nameForm']['dob'].value;
+    let heightInput = document.forms['nameForm']['height'].value;
+    let weightInput = document.forms['nameForm']['weight'].value;
+    let eyeColorInput = document.forms['nameForm']['eyecolor'].value;
+    let occupationInput = document.forms['nameForm']['occupation'].value;
+    let parentsInput = document.forms['nameForm']['parents'].value;
+    let spouseInput = document.forms['nameForm']['spouse'].value;
 
 
     let results = people;
@@ -24,7 +26,6 @@ function searchByName() {
  
    
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
-<<<<<<< HEAD
    
     
     // Rather than console logging, you need to append the filteredPeople to a table.
@@ -32,24 +33,10 @@ function searchByName() {
         console.log(results);
         buildTable(results)
     }else{
-=======
-    let filteredPeople = people.filter(function (person) {
-        if (person.firstName === firstNameInput && person.lastName === lastNameInput) {
-            return true;
-        }
-        return false;
-    });
-
-    // Rather than console logging, you need to append the filteredPeople to a table.
-    if (filteredPeople.length > 0) {
-        console.log(filteredPeople);
-    } else {
->>>>>>> 7c58ba254a0424023764f7fc7efffdc9f66bf01c
         console.log('Sorry, looks like there is no one with that name.');
     }
 }
 
-<<<<<<< HEAD
 function searchByName(firstName, lastName, peopleToSearch){
     let filteredPeople = peopleToSearch.filter(function (person) {
         if(person.firstName === firstNameInput && person.lastName === lastNameInput){
@@ -59,9 +46,6 @@ function searchByName(firstName, lastName, peopleToSearch){
     });
     return filteredPeople;
 }
-=======
-function showPeople() {
->>>>>>> 7c58ba254a0424023764f7fc7efffdc9f66bf01c
 
 function searchByEyeColor(eyeColor, peopleToSearch){
     let filteredPeople = peopleToSearch.filter(function(el){
@@ -98,7 +82,14 @@ function buildTable(peopleToDisplay){
 		document.getElementById("persons").innerHTML += `<tr>
 		<td>${el.firstName}</td>
 		<td>${el.lastName}</td>
+        <td>${el.gender}</td>
         <td>${el.dob}</td>
+        <td>${el.height}</td>
+        <td>${el.weight}</td>
+        <td>${el.eyeColor}</td>
+        <td>${el.occupation}</td>
+        <td>${el.parents}</td>
+        <td>${el.currentSpouse}</td>
 		<td><button onclick="deletePerson()">Delete</button></td>
 		</tr>`
 	})
