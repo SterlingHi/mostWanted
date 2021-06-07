@@ -90,6 +90,80 @@ function searchByGender(gender, peopleToSearch) {
     console.log(filteredPeople)
     return filteredPeople;
 }
+function searchByDob(dob, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.dob == dob) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    console.log(filteredPeople)
+    return filteredPeople;
+}
+function searchByHeight(height, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.height == height) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    console.log(filteredPeople)
+    return filteredPeople;
+}
+function searchByWeight(weight, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.weight == weight) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    console.log(filteredPeople)
+    return filteredPeople;
+}
+function searchByOccupation(occupation, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.occupation == occupation) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    console.log(filteredPeople)
+    return filteredPeople;
+}
+function searchByParents(parents, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.parents == parents) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    console.log(filteredPeople)
+    return filteredPeople;
+}
+function searchBySpouse(spouse, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.spouse == spouse) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    console.log(filteredPeople)
+    return filteredPeople;
+}
+
+
 
 function doStuff() {
     searchByEyeColor('blue', people)
