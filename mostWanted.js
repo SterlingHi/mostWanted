@@ -1,6 +1,6 @@
 'use strict';
 
-function search(){
+function search() {
     // Grabbing the values from our nameForm form and inputs.
     let firstNameInput = document.forms['nameForm']['fname'].value;
     let lastNameInput = document.forms['nameForm']['lname'].value;
@@ -16,48 +16,48 @@ function search(){
 
     let results = people;
 
-    if(genderInput != ""){
+    if (genderInput != "") {
         results = searchByGender(genderInput, results)
     }
-    if(dobInput != ""){
-        results = searchByGender(dobInput, results)
+    if (dobInput != "") {
+        results = searchByDob(dobInput, results)
     }
-    if(heightInput != ""){
-        results = searchByGender(heightInput, results)
+    if (heightInput != "") {
+        results = searchByHeight(heightInput, results)
     }
-    if(weightInput != ""){
-        results = searchByGender(weightInput, results)
+    if (weightInput != "") {
+        results = searchByWeight(weightInput, results)
     }
-    if(eyeColorInput != ""){
+    if (eyeColorInput != "") {
         results = searchByEyeColor(eyeColorInput, results)
     }
-    if(occupationInput != ""){
-        results = searchByGender(occupationInput, results)
+    if (occupationInput != "") {
+        results = searchByOccupation(occupationInput, results)
     }
-    if(parentsInput != ""){
-        results = searchByGender(parentsInput, results)
+    if (parentsInput != "") {
+        results = searchByParents(parentsInput, results)
     }
-    if(spouseInput != ""){
-        results = searchByGender(spouseInput, results)
+    if (spouseInput != "") {
+        results = searchBySpouse(spouseInput, results)
     }
 
 
 
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
-   
-    
+
+
     // Rather than console logging, you need to append the filteredPeople to a table.
-    if(results.length > 0){
+    if (results.length > 0) {
         console.log(results);
         buildTable(results)
-    }else{
+    } else {
         console.log('Sorry, looks like there is no one with that name.');
     }
 }
 
-function searchByName(firstName, lastName, peopleToSearch){
+function searchByName(firstName, lastName, peopleToSearch) {
     let filteredPeople = peopleToSearch.filter(function (person) {
-        if(person.firstName === firstNameInput && person.lastName === lastNameInput){
+        if (person.firstName === firstNameInput && person.lastName === lastNameInput) {
             return true;
         }
         return false;
@@ -65,12 +65,12 @@ function searchByName(firstName, lastName, peopleToSearch){
     return filteredPeople;
 }
 
-function searchByEyeColor(eyeColor, peopleToSearch){
-    let filteredPeople = peopleToSearch.filter(function(el){
-        if(el.eyeColor == eyeColor){
+function searchByEyeColor(eyeColor, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.eyeColor == eyeColor) {
             return true;
         }
-        else{
+        else {
             return false;
         }
     })
@@ -78,12 +78,12 @@ function searchByEyeColor(eyeColor, peopleToSearch){
     return filteredPeople;
 }
 
-function searchByGender(gender, peopleToSearch){
-    let filteredPeople = peopleToSearch.filter(function(el){
-        if(el.gender == gender){
+function searchByGender(gender, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.gender == gender) {
             return true;
         }
-        else{
+        else {
             return false;
         }
     })
@@ -91,13 +91,13 @@ function searchByGender(gender, peopleToSearch){
     return filteredPeople;
 }
 
-function doStuff(){
-	searchByEyeColor('blue', people)
+function doStuff() {
+    searchByEyeColor('blue', people)
 }
-function buildTable(peopleToDisplay){
+function buildTable(peopleToDisplay) {
     document.getElementById("persons").innerHTML = ""
-	peopleToDisplay.map(function(el){
-		document.getElementById("persons").innerHTML += `<tr>
+    peopleToDisplay.map(function (el) {
+        document.getElementById("persons").innerHTML += `<tr>
 		<td>${el.firstName}</td>
 		<td>${el.lastName}</td>
         <td>${el.gender}</td>
@@ -109,7 +109,7 @@ function buildTable(peopleToDisplay){
         <td>${el.parents}</td>
         <td>${el.currentSpouse}</td>
 		</tr>`
-	})
+    })
 }
 buildTable(people);
 

@@ -287,3 +287,14 @@ const people = [
 		"currentSpouse": null
 	}
 ];
+function buildTable() {
+
+	data.map(function (el) {
+		document.getElementById("data").innerHTML += `<tr>
+        <td id=${el.id} style="color:red">${el.id}</td>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        <td><button onclick="deletePerson()">Delete</button></td>
+        </tr>`
+	})
+}
