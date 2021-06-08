@@ -166,7 +166,7 @@ function searchBySpouse(spouse, peopleToSearch) {
 
 
 function doStuff() {
-    searchByEyeColor('blue', people)
+    searchByEyeColor(eyeColor, people)
 }
 function buildTable(peopleToDisplay) {
     document.getElementById("persons").innerHTML = ""
