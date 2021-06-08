@@ -170,7 +170,7 @@ function searchByOccupation(occupation, peopleToSearch) {
     console.log(filteredPeople)
     return filteredPeople;
 }
-function searchByParents(parents, peopleToSearch) {
+function searchByParents(parents, peopleToSearch) {    
     let filteredPeople = peopleToSearch.filter(function (el) {
         if (el.parents == parents) {
             return true;
@@ -196,13 +196,45 @@ function searchBySpouse(spouse, peopleToSearch) {
 }
 
 
+function getPersonId(idEntered){
+    let filteredPeople = people.filter(person => {
+        if(person.id == idEntered){
+            return true;
+        }
+        else{
+            return false
+        }
+    });
+
+    if(filteredPeople.length == 1){
+        return filteredPeople[0]
+    }else{
+        alert('No Person with that id')
+    }
+}
+
+
 
 function doStuff() {
     searchByEyeColor(eyeColor, people)
 }
 function buildTable(peopleToDisplay) {
+
+
+
+
+
     document.getElementById("persons").innerHTML = ""
     peopleToDisplay.map(function (el) {
+
+        let yourSpouseName = "";
+        if(el.currentSpouse != null){
+            let theSpouse = getPersonId(el.currentSpouse)
+            yourSpouseName = theSpouse.firstName + ' ' + theSpouse.lastName;
+        }
+        
+
+
         document.getElementById("persons").innerHTML += `<tr>
 		<td>${el.firstName}</td>
 		<td>${el.lastName}</td>
@@ -213,7 +245,7 @@ function buildTable(peopleToDisplay) {
         <td>${el.eyeColor}</td>
         <td>${el.occupation}</td>
         <td>${el.parents}</td>
-        <td>${el.currentSpouse}</td>
+        <td>${yourSpouseName}</td>
 		</tr>`
     })
 }
