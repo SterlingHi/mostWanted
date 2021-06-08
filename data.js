@@ -140,7 +140,7 @@ const people = [
 		"weight": 118,
 		"eyeColor": "brown",
 		"occupation": "programmer",
-		"parents": "Uma Bob(Mother)",
+		"parents": [401222887],
 		"currentSpouse": 294874671
 	},
 	{
@@ -153,7 +153,7 @@ const people = [
 		"weight": 179,
 		"eyeColor": "blue",
 		"occupation": "nurse",
-		"parents": "Uma Bob (Mother)",
+		"parents": [401222887],
 		"currentSpouse": 159819275
 	},
 	{
@@ -166,7 +166,7 @@ const people = [
 		"weight": 156,
 		"eyeColor": "blue",
 		"occupation": "assistant",
-		"parents": "Michael Walkens(Father) Jon Walkens(Father)",
+		"parents": [409574486, 260451248],
 		"currentSpouse": 951747547
 	},
 	{
@@ -179,7 +179,7 @@ const people = [
 		"weight": 235,
 		"eyeColor": "hazel",
 		"occupation": "landscaper",
-		"parents": "Jack Pafoy(Father) Jen Pafoy(Mother)",
+		"parents": [629807187, 464142841],
 		"currentSpouse": null
 	},
 	{
@@ -192,7 +192,7 @@ const people = [
 		"weight": 112,
 		"eyeColor": "green",
 		"occupation": "doctor",
-		"parents": "Jack Pafoy(Father) Jen Pafoy(Mother)",
+		"parents": [629807187, 464142841],
 		"currentSpouse": 878013758
 	},
 	{
@@ -205,7 +205,7 @@ const people = [
 		"weight": 184,
 		"eyeColor": "brown",
 		"occupation": "landscaper",
-		"parents": "Jack Pafoy(Father) Jen Pafoy(Mother)",
+		"parents": [629807187, 464142841],
 		"currentSpouse": null
 	},
 	{
@@ -218,7 +218,7 @@ const people = [
 		"weight": 249,
 		"eyeColor": "brown",
 		"occupation": "nurse",
-		"parents": "Joy Madden(Mother) Mader Madden(Father)",
+		"parents": [693243224, 888201200],
 		"currentSpouse": null
 	},
 	{
@@ -231,7 +231,7 @@ const people = [
 		"weight": 187,
 		"eyeColor": "brown",
 		"occupation": "politician",
-		"parents": "Joy Madden(Mother) Mader Madden(Father)",
+		"parents": [693243224, 888201200],
 		"currentSpouse": null
 	},
 	{
@@ -244,7 +244,7 @@ const people = [
 		"weight": 241,
 		"eyeColor": "brown",
 		"occupation": "assistant",
-		"parents": "Joy Madden(Mother) Mader Madden(Father)",
+		"parents": [693243224, 888201200],
 		"currentSpouse": null
 	},
 	{
@@ -257,7 +257,7 @@ const people = [
 		"weight": 110,
 		"eyeColor": "blue",
 		"occupation": "assistant",
-		"parents": "Joy Madden(Mother) Mader Madden(Father)",
+		"parents": [693243224, 888201200],
 		"currentSpouse": 313997561
 	},
 	{
@@ -283,7 +283,7 @@ const people = [
 		"weight": 100,
 		"eyeColor": "blue",
 		"occupation": "doctor",
-		"parents": "Madden Mattias(Father) Ellen Madden(Mother)",
+		"parents": [313207561, 313997561],
 		"currentSpouse": null
 	}
 ];
