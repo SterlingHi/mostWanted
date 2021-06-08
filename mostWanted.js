@@ -16,6 +16,12 @@ function search() {
 
     let results = people;
 
+    if (firstNameInput != "") {
+        results = searchByFirstName(firstNameInput, results)
+    }
+    if (lastNameInput != "") {
+        results = searchByLastName(lastNameInput, results)
+    }
     if (genderInput != "") {
         results = searchByGender(genderInput, results)
     }
@@ -55,13 +61,39 @@ function search() {
     }
 }
 
-function searchByName(firstName, lastName, peopleToSearch) {
-    let filteredPeople = peopleToSearch.filter(function (person) {
-        if (person.firstName === firstNameInput && person.lastName === lastNameInput) {
+// function searchByName(firstName, lastName, peopleToSearch) {
+//     let filteredPeople = peopleToSearch.filter(function (person) {
+//         if (person.firstName === firstNameInput && person.lastName === lastNameInput) {
+//             return true;
+//         }
+//         return false;
+//     });
+//     return filteredPeople;
+// }
+
+function searchByFirstName(firstName, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.firstName == firstName) {
             return true;
         }
-        return false;
-    });
+        else {
+            return false;
+        }
+    })
+    console.log(filteredPeople)
+    return filteredPeople;
+}
+
+function searchByLastName(lastName, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.lastName == lastName) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    console.log(filteredPeople)
     return filteredPeople;
 }
 
