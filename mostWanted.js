@@ -2,6 +2,7 @@
 
 function search() {
     // Grabbing the values from our nameForm form and inputs.
+    let idNumberInput = document.forms['nameForm']['id'].value;
     let firstNameInput = document.forms['nameForm']['fname'].value;
     let lastNameInput = document.forms['nameForm']['lname'].value;
     let genderInput = document.forms['nameForm']['gender'].value;
@@ -16,6 +17,9 @@ function search() {
 
     let results = people;
 
+    if (idNumberInput != "") {
+        results = searchByIdNumber(idNumberInput, results)
+    }
     if (firstNameInput != "") {
         results = searchByFirstName(firstNameInput, results)
     }
@@ -47,29 +51,27 @@ function search() {
         results = searchBySpouse(spouseInput, results)
     }
 
-
-
-    // "people" is coming from the data.js file. We have access to it within this JavaScript file.
-
-
-    // Rather than console logging, you need to append the filteredPeople to a table.
     if (results.length > 0) {
         console.log(results);
         buildTable(results)
-    } else {
+    } 
+    else {
         console.log('Sorry, looks like there is no one with that name.');
     }
 }
 
-// function searchByName(firstName, lastName, peopleToSearch) {
-//     let filteredPeople = peopleToSearch.filter(function (person) {
-//         if (person.firstName === firstNameInput && person.lastName === lastNameInput) {
-//             return true;
-//         }
-//         return false;
-//     });
-//     return filteredPeople;
-// }
+function searchByIdNumber(id, peopleToSearch) {
+    let filteredPeople = peopleToSearch.filter(function (el) {
+        if (el.id == id) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    console.log(filteredPeople)
+    return filteredPeople;
+}
 
 function searchByFirstName(firstName, peopleToSearch) {
     let filteredPeople = peopleToSearch.filter(function (el) {
@@ -172,7 +174,10 @@ function searchByOccupation(occupation, peopleToSearch) {
 }
 function searchByParents(parents, peopleToSearch) {
     let filteredPeople = peopleToSearch.filter(function (el) {
-        if (el.parents == parents) {
+        if (el.parents[0] == parents) {
+            return true;
+        }
+        if (el.parents[1] == parents) {
             return true;
         }
         else {
@@ -204,6 +209,7 @@ function buildTable(peopleToDisplay) {
     document.getElementById("persons").innerHTML = ""
     peopleToDisplay.map(function (el) {
         document.getElementById("persons").innerHTML += `<tr>
+        <td>${el.id}</td>
 		<td>${el.firstName}</td>
 		<td>${el.lastName}</td>
         <td>${el.gender}</td>
@@ -219,4 +225,3 @@ function buildTable(peopleToDisplay) {
 }
 buildTable(people);
 
-//
