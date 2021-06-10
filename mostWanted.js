@@ -1,7 +1,7 @@
 'use strict';
 
 function search() {
-    // Grabbing the values from our nameForm form and inputs.
+
     let idNumberInput = document.forms['nameForm']['id'].value;
     let firstNameInput = document.forms['nameForm']['fname'].value;
     let lastNameInput = document.forms['nameForm']['lname'].value;
@@ -56,7 +56,7 @@ function search() {
         buildTable(results)
     } 
     else {
-        console.log('Sorry, looks like there is no one with that name.');
+        alert('INVALID INPUT!');
     }
 }
 
@@ -213,33 +213,24 @@ function getPersonId(idEntered){
 
     if(filteredPeople.length == 1){
         return filteredPeople[0]
+        
     }else{
         alert('No Person with that id')
     }
 }
 
 
-
-function doStuff() {
-    searchByEyeColor(eyeColor, people)
-}
 function buildTable(peopleToDisplay) {
-
-
-
-
 
     document.getElementById("persons").innerHTML = ""
     peopleToDisplay.map(function (el) {
-
+        
         let yourSpouseName = "";
         if(el.currentSpouse != null){
             let theSpouse = getPersonId(el.currentSpouse)
             yourSpouseName = theSpouse.firstName + ' ' + theSpouse.lastName;
         }
         
-
-
         document.getElementById("persons").innerHTML += `<tr>
         <td>${el.id}</td>
 		<td>${el.firstName}</td>
@@ -256,4 +247,3 @@ function buildTable(peopleToDisplay) {
     })
 }
 buildTable(people);
-
