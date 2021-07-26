@@ -174,6 +174,8 @@ function searchByOccupation(occupation, peopleToSearch) {
 }
 function searchByParents(parents, peopleToSearch) {    
     let filteredPeople = peopleToSearch.filter(function (el) {
+        console.log("el", el)
+        console.log("parents", parents)
         if (el.parents[0] == parents) {
             return true;
         }
@@ -221,17 +223,17 @@ function getPersonId(idEntered){
 
 
 function buildTable(peopleToDisplay) {
-
-    document.getElementById("persons").innerHTML = ""
+    clearTable();
     peopleToDisplay.map(function (el) {
         
-        let yourSpouseName = "";
-        if(el.currentSpouse != null){
-            let theSpouse = getPersonId(el.currentSpouse)
-            yourSpouseName = theSpouse.firstName + ' ' + theSpouse.lastName;
-        }
+        // let yourSpouseName = "";
+        // if(el.currentSpouse != null){
+        //     let theSpouse = getPersonId(el.currentSpouse)
+        //     yourSpouseName = theSpouse.firstName + ' ' + theSpouse.lastName;
+        // }
         
         document.getElementById("persons").innerHTML += `<tr>
+        <td><img src="images/${el.id}.jpeg" class="small" alt="${el.id}" /></td>
         <td>${el.id}</td>
 		<td>${el.firstName}</td>
 		<td>${el.lastName}</td>
@@ -242,8 +244,85 @@ function buildTable(peopleToDisplay) {
         <td>${el.eyeColor}</td>
         <td>${el.occupation}</td>
         <td>${el.parents}</td>
-        <td>${yourSpouseName}</td>
-		</tr>`
-    })
+        <td>${el.currentSpouse}</td>
+        <td><button onclick="getDescendants(${(el.id)})">Get Descendants!</button></td>
+        <td><button onclick="getCurrentSpouse(${(el.id)})">Get Current Spouse</button></td>
+        <td><button onclick="getParents(${el.parents[0]}, ${el.parents[1]})">Get Parents</button></td>
+        <td><button onclick="getSiblings(${el.parents[0]}, ${el.parents[1]})">Get Siblings</button></td>
+
+		</tr>`;
+    });
 }
 buildTable(people);
+
+function getDescendants(id) {
+    console.log("people", people)
+    clearTable()
+    let children = people.filter(function (el) {
+        if (el.parents[0] == id) {
+            return true;
+        }
+        if (el.parents[1] == id) {
+            return true;
+        }
+        else {
+            console.log("no descendants on record")
+            return false;
+        }
+    })
+    console.log("immediate family", children)
+    return buildTable(children);
+}
+
+function getCurrentSpouse(id) {
+    clearTable()
+    let spouse = people.filter(function (el) {
+        if (el.currentSpouse == id) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    return buildTable(spouse);
+}
+
+function getParents(parent1, parent2) {
+    console.log("parents", parent1, parent2)
+    clearTable()
+    let parentsOfPoi = people.filter(function (el) {
+        if (el.id == parent1) {
+            return true;
+        }
+        if (el.id == parent2) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    console.log(parentsOfPoi)
+    return buildTable(parentsOfPoi)
+}
+
+function getSiblings(parent1, parent2) {
+    clearTable()
+    let siblings = people.filter(function (el) {
+        if (el.parents === parent1) {
+            return true;
+        }
+        if (el.parents === parent2) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+    console.log(siblings)
+    console.log(parent1,parent2)
+    return buildTable(siblings)
+}
+
+function clearTable() {
+    document.getElementById("persons").innerHTML = "";
+}

@@ -1,0 +1,17 @@
+img.small {
+    width: 100px;
+    height: 100px;
+}
+
+th {
+background-color: #cccccc;
+text-transform: uppercase;
+letter-spacing: 0.lem;
+font-size: 90%;
+border-bottom: 2px solid #999;
+text-alighn: left;}
+
+tr.even {
+background-color: #efefef;}
+tr:hover {
+background-color: #c3e6e5;}
